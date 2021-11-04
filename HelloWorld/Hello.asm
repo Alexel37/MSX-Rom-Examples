@@ -19,7 +19,6 @@ execute:
     call print                      ; print text
     ld HL, text2
     call print
-    call CHPUT
     call CHGET                      ; wait for keypress
     ret                             ; return to MSX-BASIC
 
@@ -36,4 +35,4 @@ text1:  db "Hello, World!"
 text2:  db "My name is Alexel37"
         db 13, 10, 0
 
-    ds      (#C000-$), #FF          ; Fill space
+    ds      (#C000 - $), #FF          ; Fill space
